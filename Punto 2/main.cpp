@@ -7,6 +7,16 @@ struct Nodo {
     struct Nodo* siguiente;
 };
 
+/* 
+ * Inserta un nuevo nodo en una lista enlazada simple manteniendo el orden ascendente.
+ *
+ * Parámetros de entrada:
+ *   - Nodo** cabeza: puntero a un puntero de tipo Nodo que apunta al primer elemento de la lista.
+ *   - int dato: valor entero que se desea insertar en la lista.
+ *
+ * Salida:
+ *   - La lista enlazada queda modificada, conteniendo el nuevo nodo en la posición ordenada.
+ */
 void insertarOrdenado(Nodo** cabeza, int dato) {
     struct Nodo* nuevo = new Nodo();
     nuevo->dato = dato;
@@ -24,6 +34,16 @@ void insertarOrdenado(Nodo** cabeza, int dato) {
     }
 }
 
+/* 
+ * Recorre y muestra todos los elementos de la lista enlazada en consola.
+ *
+ * Parámetros de entrada:
+ *   - Nodo* cabeza: puntero al primer nodo de la lista (puede ser NULL si está vacía).
+ *
+ * Salida:
+ *   - No retorna valores, pero escribe en pantalla la secuencia de datos de la lista,
+ *     mostrando un " --> " entre elementos y finalizando con "NULL".
+ */
 void mostrarLista(Nodo* cabeza) {
     Nodo* actual = cabeza;
     while (actual != NULL) {
