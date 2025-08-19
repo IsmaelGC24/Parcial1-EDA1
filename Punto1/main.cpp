@@ -41,7 +41,7 @@ vector<int> invertirArreglo(vector<int> arr) {
 }
 
 int main() {
-    vector<int> numbers = {3, 8, 15, 42, 7};
+    vector<int> numbers = {3, 8, 15, 42, 7, -23, 11, 99, 15, 0};
     cout << "Arreglo original:" << endl;
     mostrarArreglo(numbers);
     numbers = invertirArreglo(numbers);

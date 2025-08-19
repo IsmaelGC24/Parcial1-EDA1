@@ -20,6 +20,7 @@ struct Nodo {
 void insertarOrdenado(Nodo** cabeza, int dato) {
     struct Nodo* nuevo = new Nodo();
     nuevo->dato = dato;
+    nuevo->siguiente = NULL;
 
     if (*cabeza == NULL || (*cabeza)->dato > dato) {
         nuevo->siguiente = *cabeza;
@@ -36,13 +37,6 @@ void insertarOrdenado(Nodo** cabeza, int dato) {
 
 /* 
  * Recorre y muestra todos los elementos de la lista enlazada en consola.
- *
- * Parámetros de entrada:
- *   - Nodo* cabeza: puntero al primer nodo de la lista (puede ser NULL si está vacía).
- *
- * Salida:
- *   - No retorna valores, pero escribe en pantalla la secuencia de datos de la lista,
- *     mostrando un " --> " entre elementos y finalizando con "NULL".
  */
 void mostrarLista(Nodo* cabeza) {
     Nodo* actual = cabeza;
@@ -53,19 +47,50 @@ void mostrarLista(Nodo* cabeza) {
     cout << "NULL" << endl;
 }
 
+/* 
+ * Libera la memoria de todos los nodos de la lista enlazada.
+ *
+ * Parámetros de entrada:
+ *   - Nodo*& cabeza: referencia al puntero que apunta al primer nodo de la lista.
+ *
+ * Salida:
+ *   - La lista queda vacía y toda la memoria asignada se libera con delete.
+ */
+void liberarLista(Nodo*& cabeza) {
+    Nodo* actual = cabeza;
+    while (actual != NULL) {
+        Nodo* temp = actual; // Guardar el nodo actual en un puntero temporal
+        actual = actual->siguiente; // Avanzar al siguiente nodo
+        delete temp; // Liberar la memoria del nodo actual
+    }
+    cabeza = NULL; // Al final, la lista queda vacía
+}
+
 int main() {
     Nodo* cabeza = NULL;
 
+    cout << "Lista inicial:" << endl;
     mostrarLista(cabeza);
-    insertarOrdenado(&cabeza, 5);
+
+    insertarOrdenado(&cabeza, 25);
     mostrarLista(cabeza);
-    insertarOrdenado(&cabeza, 2);
+    insertarOrdenado(&cabeza, 10);
     mostrarLista(cabeza);
-    insertarOrdenado(&cabeza, 8);
+    insertarOrdenado(&cabeza, 30);
     mostrarLista(cabeza);
     insertarOrdenado(&cabeza, 1);
     mostrarLista(cabeza);
     insertarOrdenado(&cabeza, 3);
     mostrarLista(cabeza);
+    insertarOrdenado(&cabeza, 3); // valor repetido
+    mostrarLista(cabeza);
+    insertarOrdenado(&cabeza, 501); // mayor al final
+    mostrarLista(cabeza);
+
+    // Liberar memoria al final del programa
+    liberarLista(cabeza);
+    cout << "Memoria liberada, lista final:" << endl;
+    mostrarLista(cabeza);
+
     return 0;
 }
