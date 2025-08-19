@@ -5,7 +5,7 @@
 
 ---
 
-## 📖 Project Description
+## Project Description
 This project was developed as part of **Evaluation 01 – Practical Assignment (Moment 2)** for the course *Data Structures and Algorithms*.  
 
 The goal is to implement and document solutions in **C++** using linear data structures, specifically **arrays and singly linked lists**.  
@@ -26,7 +26,7 @@ The repository contains the source code and documentation for the following exer
 
 ---
 
-## ✨ Features
+## Features
 - Array reversal and visualization  
 - Ordered insertion in a linked list  
 - Display functions for arrays and lists  
@@ -35,14 +35,14 @@ The repository contains the source code and documentation for the following exer
 
 ---
 
-## ⚙️ Language and Environment
+## Language and Environment
 - **Language:** C++  
 - **IDE/Environment:** Visual Studio Code  
 - **Compiler:** g++ (C++11 or later)  
 
 ---
 
-## 🧪 Test Cases
+## Test Cases
 ### Arrays
 - Regular array with multiple elements  
 - Array with a single element  
@@ -55,7 +55,7 @@ The repository contains the source code and documentation for the following exer
 
 ---
 
-## 📄 Documentation
+## Documentation
 The documentation for this project includes:  
 - Explanation of the chosen approach  
 - Difficulties encountered  
