@@ -48,4 +48,4 @@ int main() {
     cout << "Arreglo invertido:" << endl;
     mostrarArreglo(numbers);
     return 0;
-}
+}//
